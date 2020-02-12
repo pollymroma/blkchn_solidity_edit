@@ -1,6 +1,10 @@
+CURSO DESARROLLO BLOCKCHAIN EHTEREUM CON SOLIDITY
 Clase 1: 12-02-2020
 
 Profesor: Rafael Ibarra
 rafael.dante@gmail.com
 
-BLOCKCHAIN SOLIDITY
+1. INTRODUCCIÓN A ETHEREUM
+
+ETHEREUM: una plataforma distribuida.
+
