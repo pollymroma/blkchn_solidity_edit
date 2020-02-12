@@ -7,4 +7,26 @@ rafael.dante@gmail.com
 1. INTRODUCCIÓN A ETHEREUM
 
 ETHEREUM: una plataforma distribuida.
+Permite crear smart contracts -> un programa
+
+Interfaceando con las Ethereum Networks: interactuar con la red
+
+Redes de uno o mas nodos.
+Cada nodo tiene una copia completa de la blockchain de ethereum.
+Se usan para transferir dinero, almacenar informacion.
+
+DEVELOPERS - USERS
+(Metamask como wallet. Usamos el plugin de chrome.)
+
+ETHER: la moneda que usamos en Ethereum. Medio de pago para los smart contracts.
+Se divide hasta 18 decimales. 
+No hay limite de cuantas unidades liberar.
+Smart Contracts trabajan en WEI porque la EVM (Ethereum Virtual Machine) no soporta los decimales.
+Cada linea tiene un costo. Más lineas, más gasto.
+
+METAMASK: 
+Para poder ejecutar el contrato, necesitamos una billetera para descontar lo que cuesta la ejecución.
+Usamos Metamask.
+Permite enviar y recibir información y dinero.
+
 
