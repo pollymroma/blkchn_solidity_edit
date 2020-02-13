@@ -1,4 +1,4 @@
-CURSO DESARROLLO BLOCKCHAIN EHTEREUM CON SOLIDITY
+CURSO DESARROLLO BLOCKCHAIN ETHEREUM CON SOLIDITY
 Clase 1: 12-02-2020
 
 Profesor: Rafael Ibarra
@@ -28,5 +28,46 @@ METAMASK:
 Para poder ejecutar el contrato, necesitamos una billetera para descontar lo que cuesta la ejecución.
 Usamos Metamask.
 Permite enviar y recibir información y dinero.
+
+Meter la extensión de chrome -> crear billetera
+Te genera una cuenta, con 0 ETH.
+Tiene varias redes para seleccionar. 
+Dentro del curso vamos a trabajar con local.
+Te genera un account address, una key publica y una key privada.
+Etherscan tiene todas las transacciones que se estan ejecutando en esa red: etherscan.io
+
+SEND pide dirección de envio que se puede crear o escanear un QR y una cantidad de Ether a enviar.
+
+Block Time: cantidad de tiempo que toma ejecutar cientos de miles de posibles hashes hasta encontrar el valor que 
+actualmente sea igual al que buscamos.
+Tiempo en encontrar la solución.
+DATA + NONCE = OUTPUT HASH -> OUTPUT HASH BASE 10
+Puedo ver como fluctua el tiempo promedio en la https://etherscan.io/chart/blocktime
+
+WEI
+Es la 1/8 parte de un Ether. 1 ETH = 10^18 WEI (1 ETH = 1000000000000000000 WEI)
+Para subdividir el Ether. Los Smart Contracts operan en WEI, no en Ether!! La EVM usa WEI de fondo por mas que nosotros 
+hablemos de Ether.
+
+GAS
+El precio de las transacciones en los contratos de Ethereum. El precio esta relacionado con las lineas de código, 
+costo por linea. El costo de ejecutar algo, depende de las operaciones que ejecutemos.
+Al ejecutar una transacción sobre un contrato fijamos el precio GAS que estamos dispuestos a pagar. Cuanto mas gas, 
+mayor sera la prioridad de nuestra transaccion en la blockchain porque los mineros toman primero esas Tx mas lucrativas.
+
+TRANSACCIONES
+Un registro de una operación realizada sobre la blockchain.
+Tiene su Hash, status, timestamp, bloque, origen y destino, limite de gas, gas que utilizó, costo del gas.
+
+EVM: Ethereum Virtual Machine
+Soporta la ejecución de los SmartContracts. Escribis en Solidity, compila a Bytecode y eso es lo que entiende la EVM.
+Lenguajes se pueden usar varios, Solidity es casi que estandar. Otros: Python, LLL (Lisp Like Language), Serpent, Viper.
+Python, Serpent y Viper tienen una sintaxis similar.
+Solidity es tipado. Orientado a objetos.
+
+Estructura básica de un Smart Contract:
+http://remix.ethereum.org
+
+
 
 
