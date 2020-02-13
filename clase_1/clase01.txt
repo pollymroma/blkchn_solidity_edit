@@ -67,7 +67,24 @@ Solidity es tipado. Orientado a objetos.
 
 Estructura básica de un Smart Contract:
 http://remix.ethereum.org
+Podes usar Solidity o Vyper.
+Te reconoce la cuenta de Metamask.
 
+Definimos versión del compilador: pragma solidity.
+Palabra reservada: contract.
+Tiene constructor, structs.
+Datos de tipo estrctura: varios camos con distintos tipos de datos.
+Tipo de datos: address. Importante!
+Mapping: key value. mapping(address => Voter) voters; este tipo llevalo a este otro tipo y llamalo asi.
+Define funciones con function. Definir si es público, privado. 
+Si es view: es lectura, no te cobra.
+Opciones del Remix: 
+Compile y Run.
+ABI: al compilarlo para trabajar en el frontend.
+Bytecode para la máquina.
+Run te dice un entorno (nosotros vamos a usar JavaScript VM). Te dice límite de Gas, cuenta, valor.
+Testing: nombre del contrato_test.sol
+Mocha va y busca ese test para ejecutarlo.
 
 
 
