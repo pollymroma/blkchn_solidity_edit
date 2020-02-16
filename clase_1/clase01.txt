@@ -86,5 +86,15 @@ Run te dice un entorno (nosotros vamos a usar JavaScript VM). Te dice límite de
 Testing: nombre del contrato_test.sol
 Mocha va y busca ese test para ejecutarlo.
 
+EXAMEN:
 
+Ethereum es: una plataforma open source, una plataforma descentralizada que permite la creación de contratos inteligentes, un proyecto de descentralización.
+El ether sirve para: intercambiar valor, pagar en los contratos inteligentes.
+Metamask: nos permite enviar y recibir dinero, es un modulo de chrome que se conecta a una serie de nodos de ethereum, incluye un manejador de 
+multiples cuentas, soporta el envio y recepcion de ether y tokens.
+GAS: es el precio de las transacciones en los contratos ethereum, sirve para desacoplar el precio del ether del de la ejecucion de operaciones, 
+es posible pagar un precio de gas 5 veces menor al oficial.
+Transacciones: la propiedad to es para indicar la direccion donde estara llegando el ether, una transaccion es un registro de una operacion 
+realizada sobre la blockchain, los componentes v, r y s son partes criptograficas de informacion que sirven para generar la dirección de origen 
+del ether enviado en la transaccion.
 
