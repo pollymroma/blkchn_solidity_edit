@@ -1,0 +1,47 @@
+Clase 2: 19-02-2020
+
+Diferencia entre App y dApp:
+
+APP: centralizada, 1 solo servidor, 1 target de inform???? almacenada
+
+DAPP: distribuida, varios servidores, información compartida ???? en n sitios o backends????
+
+Dentro del backend entran los smart contracts. El frontend es lo de siempre.
+
+Principios fundamentales para una dApp: descentralizada, usas estandares preestablecidos y mecanismos publicos de consenso,
+se comunica con la blockchain a traves de protocolos y estandares preestablecidos, clasificadas por su funcion financiera o en base a la blockchain.
+Funcion financiera: Puramente financiera, semi o no financiera (sistemas que no involucran dinero).
+Funcion en base a blockchain: blockchain propia o una ya existente.
+
+CryptoKitties: ejemplo. dApp semi-financiera.
+Etherisc: ejemplo. Seguros por retrasos y cancelaciones de viajes.
+Golem: alquilar poder de computo.
+Ethlance: descentralizar el mercado freelance.
+
+HERRAMIENTAS: para desarrollar dApps
+
+- Geth: nodo donde vamos a desplegar los contratos
+- JSON-RPC: protocolo que vamos a trabajar
+- Test RPC: testear los contratos
+- Truffle: framework, te genera toda la estructura de la dApp, templates
+- Remix: IDE para codificar
+
+GETH: nodo que nos provee Ethereum. Desarrollado en GO. Base del navegador MIST.
+Principal producto de la etapa Frontier: donde se define la estructura de hardware y como ir desplegando el contrato???
+(Etapas: Frontier, Homestead, Metropolis, Serenity)
+https://geth.ethereum.org/downloads/
+
+JSON-RPC: protocolo que permite conectar con el nodo. Se puede usar sobre un nodo local con -rpc (generalmente puerto 8045)
+Es una capa de comunicacion. Agnostico en cuanto al transporte. JSON como formato de datos.
+Protocolo de llamada a procedimiento remoto (RPC) sin estado y ligero.
+
+TEST RPC: nodo simulado que no esta realmente conectado a la blockchain. Emulador de blockchain.
+Realizar llamadas a la blockchain sin los gastos.
+
+TRUFFLE: entorno de desarrollo, marco de prueba y gestor de flujos para ethereum. Permite compilar, vincular y desplegar.
+Automatizacion de testing. Procesos de buildeo. Generar el binario y ejectuarlo.
+
+
+
+
+
