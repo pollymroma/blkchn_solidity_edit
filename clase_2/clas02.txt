@@ -40,6 +40,39 @@ Realizar llamadas a la blockchain sin los gastos.
 
 TRUFFLE: entorno de desarrollo, marco de prueba y gestor de flujos para ethereum. Permite compilar, vincular y desplegar.
 Automatizacion de testing. Procesos de buildeo. Generar el binario y ejectuarlo.
+trufflesuite.com
+
+REMIX: el IDE.
+
+BLOCKCHAIN EXPLORER: para ver las operaciones. Seguimiento de una transaccion.
+
+Fundamentos de Deploy: compilar el contrato (abi y bin), iniciar el nodo de GETH. O hacer el deploy desde Remix.
+
+TESTNETS: redes para simular el comportamiento de una blockchain de ethereum. Puede correr en un equipo local.
+Ethereum tiene tres redes para el desarrollo. Kovan, Rinkebby, Ropsten.
+
+
+INTRODUCCIÓN A SOLIDITY
+
+Para programar los contratos para Ethereum.
+Es tipado y orientado a objetos. Herencia de funcionalidades. Interfaces e implementación. POLIMORFISMO.
+
+pragma: versión del compilador.
+importar de otros contratos. imports.
+contract NombreDelContrato {}
+tiene constructor, métodos.
+Se referencia mediante el hash.
+tipo_de_dato tipo_de_acceso nombre_de_variable
+pure o view: no te cobra la Tx. view varia algo, pure no.
+
+dappradar.com: dApps para ver
+
+En el browser creamos nuevo contrato. Son todos .sol.
+
+
+
+
+
 
 
 
