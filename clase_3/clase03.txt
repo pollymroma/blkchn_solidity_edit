@@ -1,0 +1,48 @@
+Clase 3: 26-02-2020
+
+SOLIDITY
+
+owner: el dueño del contrato, quien inicializa el flujo, el proceso
+
+Cuidado con el returns y return, no confundir
+
+Estructura: definicion del contrato, variables, constructor, metodos.
+
+Pure, un get de algo fijo. No se cobra, pero si haces mil cosas adentro, no te dejaria hacerlo.
+View similar, pero no es algo fijo.
+
+Version actual de Solidity: 0.6
+Se puede interactuar con contratos de versiones anteriores.
+
+CONTRATO:
+acuerdo entre dos o mas partes, se define que se puede hacer, como y que pasa si algo no se hace.
+las partes lo aceptan y entienden como va a ser su interaccion.
+A bajo nivel es: algoritmos, hash, logica.
+Inteligentes: se ejecutan por si mismos sin intervencion de otros. Son scripts.
+Distribuidos en la Ethereum Blockchain.
+
+BLOCK PROPERTIES Y TRANSACTION PROPERTIES
+Informacion que se manda como metadata para ciertos manejos y validaciones. Va con la transaction que se manda a la blockchain.
+Block Header y un monton de propiedades adentro.
+Cuando se deploya un contrato se genera un contract address.
+Usuario tambien tendra un address. 
+Un contrato puede llamar a otro. El contract address de contrato 1 llama a contrato 2 con otra contract address.
+El tx.origin sigue siendo el mismo, el primero que dispara la tx. Lo llama el usuario.
+
+Tipos en Solidity:
+uint, int, int constant, int 256, bool, byte, bytes2, bytes32, bytes, string
+
+Tipos en Ethereum: 
+address: un estandar seria usar la variable llamada owner. El owner del contrato. Uno solo. Ej: address public owner;
+mapping: mapping(address => uint) public balances; el saldo. paso el address, devuelve el saldo.
+Hay enums y structs.
+
+LOGGING Y EVENTOS
+Event: nombre, qué notifica. Ej: event PasoAlgoEvent(string _unMensaje)
+lo uso: una funcion llama a ese Event. function hacerAlgo(...) le paso un valor del mismo tipo que el definido en el evento. 
+
+
+
+
+
+
