@@ -69,7 +69,15 @@ dappradar.com: dApps para ver
 
 En el browser creamos nuevo contrato. Son todos .sol.
 
+EXAMEN:
 
+1. Una dApp es: una aplicacion distribuida sobre la Ethereum Blockchain, un conjunto de tecnologias combinadas
+que ofrecen un servicio distribuido, una aplicacion que no depende de un sistema centralizado.
+2. dApps en base a su funcion financiera: puramente, semi-financieras, no financieras.
+3. Para desarrollar dApps se puede usar: GETH, JSON RPC, Truffle, Test RPC.
+4. Test RPC: es un nodo simulado, la velocidad de minado puede ser customizada, requiere nodeJS.
+5. Remix: tiene una interfaz web, es un compilador que ofrece la Ethereum Foundation, permite compilar y 
+deployar smart contracts.
 
 
 
