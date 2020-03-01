@@ -41,7 +41,14 @@ LOGGING Y EVENTOS
 Event: nombre, qué notifica. Ej: event PasoAlgoEvent(string _unMensaje)
 lo uso: una funcion llama a ese Event. function hacerAlgo(...) le paso un valor del mismo tipo que el definido en el evento. 
 
-
+EXAMEN:
+Un contrato es: un acuerdo entre dos o mas partes, un script de codigo distribuido, capaz de ejecutarse
+por si mismo. 
+Las Block Properties: permiten identificar el hash de un bloque, saber el numero de bloque actual. 
+Tipos de datos basicos: uint, bytes, bool, string.
+Tipos en Ethereum: address provee metodos y propiedades utiles para transaccionar. Finney es un tipo
+ especifico ue brinda una equivalencia al ether. Now permite obtener el momento actual. 
+ Enumeraciones: se definen con enum, pueden ser publicas o privadas, pueden tener tantos valores como desee.
 
 
 
