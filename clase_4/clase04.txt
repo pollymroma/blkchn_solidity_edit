@@ -1,2 +1,10 @@
 CLASE 4 - 4/3/2020
 
+Arrays
+
+Dinamico y fijo.
+
+Primer elemento en la posicion cero.
+
+uint256[] ejemploArrayFijo = new uint256[](5) -> guarda cinco elementos. Le digo tamaño.
+
