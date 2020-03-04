@@ -8,3 +8,54 @@ Primer elemento en la posicion cero.
 
 uint256[] ejemploArrayFijo = new uint256[](5) -> guarda cinco elementos. Le digo tamaño.
 
+En el caso de dinamicos, no le digo cuantos elementos va a tener.
+uint256[] ejemploDinamico;
+Metemos lo que queremos con push. Tenemos length.
+
+propiedad "payable" => tiene que ver con el envio de dinero.
+
+function apostar() public payable {
+    apostadores.push(msg.senders);
+}
+permite el envio de dinero pero no es necesario si o si. Podria llamarla y no pasarle ether y no rompe.
+
+VALIDACIONES: if vs required
+
+Entonces quiero validar que se envie el dinero: require
+function apostar() public payable {
+    require(msg.value >= 1 ether);
+    apostadores.push(msg.senders);
+}
+ahora si necesita que le pases ether.
+No continua la ejecucion si la condicion require no se cumple. Tiraria error.
+
+IF: if y else. Puedo usar los ifs para validar. Si uso un if, tengo que usar si o si el else para 
+decirle que hacer si no se da.
+
+DEBUGGING CON REMIX:
+Usamos el debugger. 
+
+Generacion Aleatoria: no hay forma real de generar un valor aleatorio. Se simula. 
+keccak256() recibe ciertos parametros y genera un valor. Genera un hash por ejemplo con la dificultad del bloque
+el valor now y un array de direcciones. 
+function miFuncionRandom() private view returns (uint) {
+    return uint(keccak256(block.difficulty, now, apostadores));
+}
+
+Modificadores de Funcion: modifier
+le podes meter ahi los require y despues para validar directamente llamas a ese en vez de hacer diferentes
+validaciones locales que hagan todas lo mismo.
+
+function elegirGanador() public view miModificadorDeFuncion {
+
+}
+
+modifier miModificadorDeFuncion() {
+    require(msg.sender == owner);
+    _;
+}
+
+siempre que quiera validar lo mismo, directamente llamo a esto.
+Puede o no recibir parametros, termina con _;, puede tener o no require, se ejecuta siempre antes que la
+primera linea de la funcion sobre la que se aplique.
+
