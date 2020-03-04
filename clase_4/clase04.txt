@@ -59,3 +59,4 @@ siempre que quiera validar lo mismo, directamente llamo a esto.
 Puede o no recibir parametros, termina con _;, puede tener o no require, se ejecuta siempre antes que la
 primera linea de la funcion sobre la que se aplique.
 
+No existe el concepto de nulo, aparentemente en solidity. Arranca con el primer valor de su tipo.
