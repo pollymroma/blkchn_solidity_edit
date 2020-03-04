@@ -60,3 +60,36 @@ Puede o no recibir parametros, termina con _;, puede tener o no require, se ejec
 primera linea de la funcion sobre la que se aplique.
 
 No existe el concepto de nulo, aparentemente en solidity. Arranca con el primer valor de su tipo.
+
+UNIDADES Y VARIABLES GLOBALES:
+
+tiempo, ether, propiedades de bloque, propiedades de la transaccion, funciones matematicas y criptograficas, funciones de direcciones
+y funciones de contrato.
+
+Funciones matematicas/criptograficas: 
+assert tira excepcion si la condicion no se cumple.
+ecrecover recupera la direccion asociada a la clave publica de la firma de tipo curva eliptica.
+revert: aborta ejecucion y revierte cambios.
+
+Funciones de direccion: balance, transfer (exception si falla) send (false si falla)
+
+Managers: definir privilegio de acceso a un metodo. Direcciones de ethereum tendran mas privilegios que otras.
+Puedo meter un require para controlar quien llama a esa funcion.
+
+TUPLAS: puedo devolver mas de un valor y de diferentes tipos de datos.
+Secuencias de valores agrupados. Una vez creadas no pueden ser modificadas. Pueden ser retornadas.
+
+Ej: function funcionQueRetornaTuplaDosValores() public pure returns(string, uint) {
+        return ("un valor de texto", 1012);
+    }
+    En el returns le mandas todos los tipos que devuelve.
+    En el return, entre parentesis, le decis lo que devuelve.
+
+
+
+
+
+
+
+
+
