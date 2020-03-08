@@ -85,7 +85,19 @@ Ej: function funcionQueRetornaTuplaDosValores() public pure returns(string, uint
     En el returns le mandas todos los tipos que devuelve.
     En el return, entre parentesis, le decis lo que devuelve.
 
+EXAMEN:
 
+1. Unidades y Variables Globales: se encuentran disponibles en todo momento, se dividen en al menos 6 grupos, 
+permiten un mejor manejo de los smart contracts.
+2. Equivalencias de Ether: 
+1 Ether = 1000000000000000000 Wei
+1000 Finney = 1 Ether
+2 Ether = 2000000 szabo
+3. Tupla es: secuencia de valores agrupados, conjunto de datos a ser retornado, inmutable.
+4. Debugging con Remix: permite ver paso a paso lo que se ejecuta, incluido gratuito en remix online, 
+incluye manejador de multiples cuentas, permite ingresar en sub-funciones.
+5. Versionado del proyecto: para salvaguardar cambios historicos realizados, volver a un punto anterior en caso 
+de romper algo.
 
 
 
