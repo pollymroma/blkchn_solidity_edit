@@ -1,0 +1,80 @@
+PITFALLS
+
+Trampas: generan fallos y vulnerabilidades conocidos en los contratos. Ya pasaron, evitar caer en la misma. 
+
+Llamada a lo desconocido: surge de la funcion de respaldo: fallback function. Esta funcion puede invocarse
+cuando alguien llama al contrato enviando una solicitud que invoca ciertas funciones o transfiere ether a 
+otro contrato inteligente.
+Desvia fondos. Se genera un contrato que llama a otro y desvia fondos. No entiendo como. 
+
+Reentrancy: re-entrada. La estructura de la funcion de respaldo permite a un atacante invocar repetidamente 
+la funcion del llamante. Abre la puerta a la perdida de gas y fondos almacenados en el contrato.
+
+Exception Disorder: surge cuando hay escasez de GAS, se encuentra con un limite de pila de llamadas, en la ejecucion
+de un comando throw.
+Como solidity se comporta con excepciones difiere. Por eso se da esta vulnerabilidad. Solidity no comprueba 
+los errores de envio o solicitudes de llamadas. Se revierte una transaccion y se pierde gas. 
+
+Gasless send: excepcion de falta de gas. se transfiere ether a traves de la funcion de envio a un destinatario 
+con una funcion de respaldo costosa, limitada a 2300 unidades de gas. Si la excepcion no se maneja, se puede fingir 
+que ya se envio el ether y se retiene la cantidad. 
+
+Keeping secrets: un usuario intenta ocultar informacion en un campo de un contrato haciendolo privado.
+Se envia la transaccion a los mineros, pueden revisarla y ver la informacion privada. Se puede ocultar con 
+tecnicas criptograficas. 
+
+Timestamp dependance: para realizar cualquier operacion, el contrato recibe un timestamp con la hora en que 
+se generó el bloque. Manipular el timestamp. 
+
+Generating randomness: contratos que generan numeros aleatorios (loterias, juegos). requiere enviar una 
+transaccion. se puede aprovechar un bloque con una transaccion que coincida con el numero generado al azar.
+
+Dangerous delegateCall: solicitud de delegacion de llamadas es similar a una solicitud de llamada. el codigo de 
+la direccion del destinatario se ejecuta igual el codigo del contrato llamante. si el argumento de la solicitud
+es msg.data, un atacante puede crearlo con firma para que pueda hacer que el contrato de la victima realice 
+una llamada para cualquier funcion que le proporcione.
+
+Overflow and Underflow: valor maximo 256 bits, si le agregas un 1, da la vuelta y va a 0. Genero overflow.
+Si a 0 le resta 1, da la vuelta y llega al maximo. Genera underflow.
+Explotar el underflow permite gastar mas tokens de los que tiene. Buena forma de asegurarse contra esto es
+usar SaveMath de OpenZeppelin.
+
+LIMITES DE GAS Y BUCLES: usar bucles con cuidado. Hay un limite de gas del bloque, las transacciones solo 
+pueden consumir cierta cantidad de gas.
+Si el numero de iteraciones de un bucle crece mas alla del limite de gas, se detiene el contrato. 
+
+Funciones constant solo leen informacion de la blockchain, esto no aplica.
+
+WARNINGS:
+Es sospechoso un contrato compilado con una version nightly en vez de release. Tambien si la version no es la
+mas reciente del momento de creado. 
+Cada error conocido es publico y publicado en GitHub. 
+
+MODULARIZACION:
+Mantener los contratos pequeños y faciles de entender. Separar funcionalidades no relacionadas en otros
+contratos o librerias. Limitar cantidad de variables locales. Limitar longitud de funciones. Documentar las
+funciones. 
+
+ABI: application binary interface. Fuertemente tipada. Los contratos tienen una definicion de la interfaz de 
+cada contrato que vayan a llamar.
+
+Desarrollar a prueba de fallos: agregar funciones que realicen comprobaciones internas pero que no usen
+mucho gas (ayuda con operaciones off-chain). Si los chequeos fallan el contrato cambia a modo a prueba de
+fallos, se desactivan funciones, devuelve dinero o da el control a otro.
+
+PATRONES: para garantizar la correcta ejecucion de los contratos y la seguridad del dinero/ether.
+- Retiro desde contratos: (withdrawal) enviar fondos despues de una ejecucion. No enviar dinero con una llamada directa. 
+- Maquina de estados: los contratos suelen actuar como maquinas de estados. En ciertas etapas se comportan
+de forma diferente que en otras, se pueden llamar distintas funciones. 
+- Restringiendo el acceso: muy utilizado. no se puede restringir la lectura de la transaccion y su informacion 
+a nadie. Usando modificadores de funcion. 
+
+EXAMEN:
+1. Pitfalls: fallas conocidas en los contratos, permiten explotar vulnerabilidades, permiten adueñarse del
+dinero almacenado.
+2. Modularizacion: mantener los contratos simples y pequeños.
+3. Warnings: cada error conocido es publico en github, cada error contiene propiedades que permiten realizar 
+un seguimiento, es sospechosono usar la ultima version de solidity en contratos nuevos, es dudoso compilar con nightly.
+4. Top fallas: timestamp dependance, overflow, gassless.
+5. Restriccion de acceso: es un patron muy utilizado, no es posible impedir con lo lean, es posible utilizarlo en cualquier 
+funcion. 
