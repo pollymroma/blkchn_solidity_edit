@@ -1,0 +1,69 @@
+CLASE 6
+
+Token: un criptoactivo (no necesariamente moneda), criptodivisas. Se usan como sustituto de una moneda real.
+Ej: fichas de un casino
+
+Standares:
+EIPS: ethereum improvement proposals
+ERC: ethereum request for comments
+especificacion definida. Los tokens siguen estos estandares, son uno o el otro.
+ERC20 proponia un estandar de funcionamiento -> se establece standard
+
+totalSupply: cantidad de token maxima que va a haber de ese token
+Una vez alcanzado, no hay mas, como que le marca la vida util.
+
+Tener un ERC20 es decir que ese contrato de token responde a una serie definida de metodos.
+Puede ser transferido, consultado, aprobado.
+No necesariamente tiene valor el token ni tiene que hacer algo.
+Pero esta pensado para ser dinero.
+
+Interfaz de un Token ERC20:
+
+funciones: totalSupply, balanceOf, transfer, allowance, transferFrom, approve
+eventos: Transfer, Approval
+
+ERC721: objetos coleccionables, cada token es unico, no puede ser dividido. Para cosas.
+
+Interfaz de un Token ERC721:
+funciones: balanceOf, ownerOf, exists, approve, getApproved, setApprovalForAll, isApprovedForAll, 
+transferFrom, safeTransferFrom
+eventos: Transfer, Approval, ApprovalForAll
+
+DESARROLLO:
+Podemos usar Remix. Pero vamos a trabajar con: Truffle, Ganache-Cli, Atom/Visual studio
+
+npm install truffle -g
+
+Funcion sin nombre: no tine argumentos ni devuelve nada. Sin nombre. La funcion fallback.
+function() {}
+
+DEFINICION DEL SMART CONTRACT:
+Desarrollar un token compatible con ERC20. Implementar los metodos mencionados.
+
+- Crear token con su ICO: truffle init
+- Estructura del proyecto: contracts, migrations, test
+- Necesitamos archivos: token, ICO, controller, controlled, owned. Son todos contratos .sol, en contracts.
+- Configurar Truffle: truffle.js 
+module.exports = {
+    networks : {
+        development: {
+            host: "localhost",
+            port: 8545,
+            network_id: "*",
+            gas: 4000000,
+            gasPrice: 30e9
+        }
+    }
+};
+
+- Controller: una interfaz que luego implementaremos.
+- Controlled: los owners de las cuentas. quien es dueño del token quien va a ser el nuevo dueño. direccion controller que se usa para validar que solo ese pueda realizar ciertas cosas.
+- Token: define las funciones que requiere el estandar. 
+importar contrato Controlled, indicar que token es un contrato controlado, generar constructor de
+token y el controller sera el sender de la transaction.
+- Owned: especificar si la cuenta destino acepta la transaction que se envia como token. da el ok.
+- ICO: la especificacion de cantidad max de dinero a aceptar, equivalencia de cantidad de token que damos
+por cada ether recibido. cantidad total de token. implementar cosas del pago.
+
+- En un directorio mandamos truffle init: te genera carpetas contracts, migrations y tests
+- Configuramos el truffle-config.js
