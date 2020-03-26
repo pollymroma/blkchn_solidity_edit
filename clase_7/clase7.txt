@@ -1,0 +1,65 @@
+CLASE 7
+
+Web3JS:
+
+Para conectar frontend con blockchain. Hay una version de javascript y una de python tambien.
+Provee metodos y propiedades para simplificar la interaccion con los smart contracts.
+
+https://web3js.readthedocs.io/en/v1.2.6/
+
+Modulo eth para interactuar con la red Ethereum.
+Otros modulos:
+- net: interactua con propiedades de la red.
+- personal: interactua con cuentas de ethereum.
+- ssh: interactua con el protocolo ssh.
+- bzz: ineractua con swarm networks.
+
+var Web3 = require('web3');
+var web3 = new Web3(Web3.givenProvider...)
+
+Arquitectura de una App Ethereum
+
+App distribuida para una app de blockchain:
+frontend
+backend: blockchain -> smart contracts -> interactuan las transactions
+
+App distribuida comun:
+frontend
+backend: servidor -> servicios web -> interactua con base de datos
+
+Una dApp debe ser: descentralizada, usando estandares preestablecidos, basandose en mecanismos publicos de consenso, 
+se comunica con la blockchain a traves de protocolos preestablecidos.
+
+Client side: Wallet (metamask) <-> Frontend (js, web3)
+Blockchain: Ethereum node <-> smart contracts (deployados en ganache)
+Server: backend
+backend y ethereum se conectan con el frontend 
+
+Web3: instalar e instanciar para poder interactuar.
+
+Cosas que necesitamos:
+1. truffle init: crear estructura del proyecto
+2. crear contrato 
+3. start truffle console para levantar servicio local
+4. deploy de contrato, configurar metamask
+5. index.html llama a bundler.js
+6. en bundler se instancia web3, copiamos el ABI del contrato y su address
+7. instanciamos contrato
+8. llamamos a la funcion del contrato
+
+En el package.json
+- start: crear una carpeta public y start va a decir en esa carpeta. static-server public
+- node static server: https://www.npmjs.com/package/static-server
+- public tiene bundel, index y web3
+- tenemos contracts, migrations.
+- En contracts creamos el contrato HelloWorld.sol
+- en migrations 1_initial_migration.js y 2_hellow_world.js
+- copia initial_migration a hello_world cambia el const a HelloWorld
+
+truffle compile
+truffle develop
+en el bundle meto contract address sale del ABI
+e instancio web3: var web3 = new Web3('http://localhost:9545')
+agrego: var helloworld = new web3.eth.Contract(contractABI, contractAddress) que estan ambos en el bundle
+
+al bundle le agrego tambien un eventListener. le paso contentloaded
